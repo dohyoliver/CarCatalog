@@ -12,3 +12,13 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+model cars{
+  id Int @id @default(autoincrement()) 
+  vehicle String
+  type String
+  color String
+  fuel String
+  manufacturer String
+  model String
+  
+}
