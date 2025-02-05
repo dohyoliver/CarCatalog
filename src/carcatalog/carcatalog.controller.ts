@@ -19,7 +19,7 @@ export class CarcatalogController {
    @Patch(':id')
    @ApiParam({
      name: "id",
-     type: "int",
+     type: "number",
      description: 'The unique ID of the car'
    })
    @ApiResponse({ status: 200, description: 'Car created successfully' })
@@ -50,7 +50,7 @@ export class CarcatalogController {
   @Get(':id')
   @ApiParam({
     name: "id",
-    type: "int",
+    type: "number",
     description: 'The unique ID of the car'
   })
   @ApiResponse({ status: 200, description: 'Retrice all cars' })
@@ -69,7 +69,7 @@ export class CarcatalogController {
   @Patch(':id')
   @ApiParam({
     name: "id",
-    type: "int",
+    type: "number",
     description: 'The unique ID of the car'
   })
   @ApiResponse({ status: 200, description: 'The modified data of the phone' })
@@ -87,7 +87,7 @@ export class CarcatalogController {
    @Delete(':id')
    @ApiParam({ 
     name: 'id', 
-    type: 'int', 
+    type: 'number', 
     description: 'The unique ID of the car' })
   @ApiParam({ name: 'id', type: 'int', description: 'The unique ID of the car' })
   @ApiResponse({ status: 200, description: 'Car deleted successfully' })
