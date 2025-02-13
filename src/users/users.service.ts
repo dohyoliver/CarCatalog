@@ -21,19 +21,34 @@ export class UsersService {
   }
 
   findAll() {
-    return `This action returns all users`;
+    return this.db.user.findMany();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    return this.db.user.findUnique({where:  {id}});
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    try{
+      return await this.db.user.update({
+       data: updateUserDto,
+       where: {id}
+     });
+   }catch{
+     return undefined;
+   }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+
+  async remove(id: number) {
+    try{
+      await this.db.user.delete({
+        where: {id}
+      })
+      return true
+    }catch{
+      return false
+    };
   }
 
   async getUserByToken(token: string) {

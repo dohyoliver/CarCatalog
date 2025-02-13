@@ -10,9 +10,9 @@ export class CarcatalogController {
   constructor(private readonly carcatalogService: CarcatalogService) {}
 
    /**
-   * Creates a new car entry in the catalog
+   * Creates a new user
    * 
-   * @param id The unique ID of the car
+   * @param id The unique ID of the user
    * @param createcarcatalogDto The data to be created
    * @returns JSON response 
    */
@@ -20,7 +20,7 @@ export class CarcatalogController {
    @ApiParam({
      name: "id",
      type: "number",
-     description: 'The unique ID of the car'
+     description: 'The unique ID of the user'
    })
    @ApiResponse({ status: 200, description: 'Car created successfully' })
    @ApiBadRequestResponse({ description: 'The supplied data was invalid' })
@@ -35,7 +35,7 @@ export class CarcatalogController {
    * @returns JSON response
    */
   @Get()
-  @ApiResponse({ status: 200, description: 'Retrice all cars' })
+  @ApiResponse({ status: 200, description: 'Retrive all cars' })
   @ApiBadRequestResponse({ description: 'The supplied data was invalid' })
   findAll() {
     return this.carcatalogService.findAll();
@@ -53,7 +53,7 @@ export class CarcatalogController {
     type: "number",
     description: 'The unique ID of the car'
   })
-  @ApiResponse({ status: 200, description: 'Retrice all cars' })
+  @ApiResponse({ status: 200, description: 'Retrive a specific car' })
   @ApiBadRequestResponse({ description: 'Car not found or invalid ID' })
   findOne(@Param('id') id: string) {
     return this.carcatalogService.findOne(+id);
