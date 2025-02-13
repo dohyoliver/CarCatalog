@@ -19,6 +19,19 @@ model cars{
   color String
   fuel String
   manufacturer String
-  model String
+  mass Int
   
+}
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  password String
+
+  tokens Token[]
+}
+
+model Token {
+  token String @id
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
 }

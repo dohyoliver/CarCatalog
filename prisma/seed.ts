@@ -14,7 +14,7 @@ async function main() {
         color: faker.color.human(),
         fuel: faker.vehicle.fuel(),
         manufacturer: faker.vehicle.manufacturer(),
-        model: faker.vehicle.model(),
+        mass: faker.number.int({ min: 700, max: 3500 }),
       },
     });
   }

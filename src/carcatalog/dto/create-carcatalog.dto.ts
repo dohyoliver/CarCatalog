@@ -44,7 +44,7 @@ export class CreateCarcatalogDto {
     @IsNotEmpty()
     @IsString()
     @ApiProperty({
-        example: "Model 3"
+        example: "1500"
     })
-    model:string
+    mass:number
 }
