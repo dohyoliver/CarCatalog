@@ -16,7 +16,7 @@ export class CarcatalogController {
    * @param createcarcatalogDto The data to be created
    * @returns JSON response 
    */
-   @Patch(':id')
+  
    @ApiParam({
      name: "id",
      type: "number",
@@ -89,7 +89,7 @@ export class CarcatalogController {
     name: 'id', 
     type: 'number', 
     description: 'The unique ID of the car' })
-  @ApiParam({ name: 'id', type: 'int', description: 'The unique ID of the car' })
+ 
   @ApiResponse({ status: 200, description: 'Car deleted successfully' })
   @ApiBadRequestResponse({ description: 'Car not found or invalid ID' })
   remove(@Param('id') id: string) {
